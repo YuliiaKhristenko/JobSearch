@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .container {
+        @apply max-w-[1440px]
+    }
+}
+
+:root {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: white;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+}
+
+a:hover::before {
+    position: absolute;
+    content: '';
+    height: 4px;
+    width: 100%;
+    background: #2a68ff;
+    right: 0;
+    bottom: -8px;
+    color: #2a68ff;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.card {
+    background: #000;
+}
+
+.burger {
+    height: 20px;
+    position: relative;
+    width: 30px;
+}
+.burger-line {
+    display: flex;
+    width: 30px;
+    height: 2px;
+    background: black;
+    transition: .3s all ease;
+}
+.top-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.mid-line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.bottom-line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.burger.active>.top-line {
+    transform: translateY(8px) rotate(45deg);
+    transition: .3s all ease;
+}
+.burger.active>.mid-line {
+    opacity: 0;
+    transition: .3s all ease;
+}
+.burger.active>.bottom-line {
+    transform: translateY(-10px) rotate(-45deg);
+    transition: .3s all ease;
+}
